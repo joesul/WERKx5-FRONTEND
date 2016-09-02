@@ -1,0 +1,7 @@
+.video {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border: 10px solid black;
+  background-color: black;
+}

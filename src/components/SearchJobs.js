@@ -55,16 +55,17 @@ class SearchJobs extends Component {
     let jobsList = this;
     return (
       <div className="search-jobs-wrapper">
-        <h2>Search by Zip Code: <input onChange={event => this.setState({zip: event.target.value})}/></h2><br/>
-      <button className="sJobs" onClick={(event) => this.handleSearchByZip(event)}>Search</button>
-        <button className="sJobs" onClick={(event) => this.handleViewAll(event)}>View all Jobs</button><br/>
-        <ul>
-          {jobs.map(function(jobs, index){
+        <h2>Search by Zip Code: <input onChange={event => this.setState({zip: event.target.value})}/></h2>
+        <button className="sJobs" onClick={(event) => this.handleSearchByZip(event)}>Search</button>
+        <button className="sJobs" onClick={(event) => this.handleViewAll(event)}>View all Jobs</button>
+
+        <ul className="jobs-list">
+                    {jobs.map(function(jobs, index){
             return <li key={index}>
               <li><h3>Job Name: {jobs.job_name}</h3></li>
-            <li><h3>Offer: ${jobs.offer}</h3></li>
-          <li><h3>Description: {jobs.description}</h3></li>
-        <li><h3>Zipcode: {jobs.zip}</h3></li>
+              <li><h3>Offer: ${jobs.offer}</h3></li>
+              <li><h3>Description: {jobs.description}</h3></li>
+              <li><h3>Zipcode: {jobs.zip}</h3></li>
           <button className="sJobs" onClick={(event) => jobsList.handleTakeJob(event, jobs.id)}>Take Job</button></li>
           })}
         </ul>

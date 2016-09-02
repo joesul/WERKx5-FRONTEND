@@ -17,28 +17,34 @@ const firebaseUtils = {
         auth.createUserWithEmailAndPassword(email, password).catch((error) => {
             if (error) {
                 console.log("error: ", error)
-                browserHistory.push("/")
             }
         }).then((res) => {
-            console.log(res);
-            browserHistory.push("/profile");
-            firebase.database().ref('users/'+res.uid).set({
-                firstName: obj.firstName,
-                lastName: obj.lastName,
-                displayName: obj.userName,
-                email: obj.email,
-                phone: obj.phone
-            })
-        })
+            if (res) {
+              console.log("fb res log",res);
+              browserHistory.push("/profile");
+              firebase.database().ref('users/'+res.uid).set({
+                  firstName: obj.firstName,
+                  lastName: obj.lastName,
+                  displayName: obj.userName,
+                  email: obj.email,
+                  phone: obj.phone
+              })
+            } else {
+              console.log("fail");
+            }
+          })
     },
 
     SignIn: function (email, password) {
         firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
             console.error("Sign in error:", error.code, error.message);
         }).then((res) => {
-            console.log(res.uid);
-            localStorage.setItem("uid", res.uid);
-            browserHistory.push("/profile");
+          console.log(res);
+            if (res) {
+              console.log("res",res.uid);
+              localStorage.setItem("uid", res.uid);
+              browserHistory.push("/profile");
+            }
         })
     },
 

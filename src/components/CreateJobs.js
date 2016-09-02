@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router';
 import Helper from '../utils/Helper';
-import Video from './Video'
 import '../stylesheets/CreateJobs.css';
 
 let uid = localStorage.getItem('uid')
@@ -44,9 +42,7 @@ class CreateJobs extends Component {
         <div>{this.state.message}</div>
         </ul>
         </form>
-        <Video />
         </div>
-
     );
   }
 }

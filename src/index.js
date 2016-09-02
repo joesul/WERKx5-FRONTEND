@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 import App from './components/App';
+import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
@@ -13,8 +14,10 @@ import SearchJobs from './components/SearchJobs';
 import './stylesheets/index.css';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
+  <div>
+    <App />
+    <Router history={browserHistory}>
+      <Route path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/profile" component={Profile} />
       <Route path="/signup" component={Signup} />
@@ -23,7 +26,7 @@ ReactDOM.render(
       <Route path="/jobslisted/edit" component={EditJob} />
       <Route path="/createjobs" component={CreateJobs} />
       <Route path="/searchjobs" component={SearchJobs} />
-    </Route>
-  </Router>,
+    </Router>
+  </div>,
   document.getElementById('root')
 );

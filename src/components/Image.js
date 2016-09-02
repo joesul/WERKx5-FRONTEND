@@ -5,7 +5,7 @@ import '../stylesheets/images.css'
 class Image extends Component{
   render(){
     return(
-       <img src={logo}/>
+       <img alt="" src={logo}/>
     )
   }
 }
