@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router';
 import Helper from '../utils/Helper';
-<<<<<<< HEAD
 import Video from './Video'
-=======
->>>>>>> f8d8ae20cce730c9815af71636b720ba67aea4a7
 import '../stylesheets/CreateJobs.css';
 
 let uid = localStorage.getItem('uid')

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router';
 import Helper from '../utils/Helper';
-<<<<<<< HEAD
 import '../stylesheets/SearchJobs.css';
-=======
-import '../stylesheets/JobsListed.css';
->>>>>>> f8d8ae20cce730c9815af71636b720ba67aea4a7
 
 let uid = localStorage.getItem('uid')
 
