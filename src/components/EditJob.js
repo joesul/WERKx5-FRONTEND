@@ -55,6 +55,7 @@ class EditJob extends Component {
     return (
       <div className="edit-jobs-wrapper">
         <form onSubmit={(event) => this.editJob(event)}>
+
           <ul>
           <h2>Edit Job</h2>
           <h3>Job Name: <li><input placeholder={job.state.job_name} onChange={(event) => this.setState({job_name: event.target.value})}/></li></h3>

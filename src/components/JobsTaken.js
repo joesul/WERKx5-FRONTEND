@@ -39,6 +39,7 @@ class JobsTaken extends Component {
 
     return (
       <div className="jobs-taken-wrapper">
+
         <ul className="tList">
         <button className="jTaken" onClick={(event) => this.handleWorkList(event)}>View Work List</button>
           {jobs.map(function(jobs, index){
@@ -48,6 +49,7 @@ class JobsTaken extends Component {
               <li><h2>Description: {jobs.description} </h2></li>
               <li><h2>Job Status:  {!jobs.job_status ? "Ongoing" : jobs.job_status}</h2></li>
               <button className="jTaken" onClick={(event) => jobsList.handleJobFinished(event, jobs.id)}>Job Finished</button></li>
+
           })}
         </ul>
       </div>
